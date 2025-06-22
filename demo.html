@@ -1,0 +1,47 @@
+<script lang="ts">
+  import { htmlformselect_mru } from "$lib/htmlformselect_mru_ts";
+  const my_htmlformselect_mru: htmlformselect_mru = new htmlformselect_mru();
+
+  onMount(() => {
+    my_htmlformselect_mru.init({resetMRUCommand: "reset MRU", cssclass_mru_affected: "mru_affected"});
+  });
+</script>
+<style >
+  :global(.mru_affected) {
+    font-weight: bold;
+  }
+</style>
+
+<body>
+      <div> 
+          <br />
+          Testing sortalpha and sortmru in combinations
+        </div>
+        <div> 
+          <br />
+          <label for="test-sortalpha" class="label-text pb-1">test-sortalpha</label>
+          <select id="test-sortalpha" data-sortalpha>
+            <option value="DEF">DEF</option>
+            <option value="ABC">ABC</option>
+            <option value="GHI">GHI</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+          </select>
+        </div>
+        <div>
+          <br />
+          <label for="test-sortalpha-sortmru-together" class="label-text pb-1">test-sortalpha-sortmru-together</label>
+          <select id="test-sortalpha-sortmru-together" data-sortmru data-sortalpha>
+            <option value="DEF">DEF</option>
+            <option value="ABC">ABC</option>
+            <option value="GHI">GHI</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+            <option value="reset MRU">Reset MRU</option>
+          </select>
+        </div>
+</body>
+
+
